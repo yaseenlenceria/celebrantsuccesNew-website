@@ -10,6 +10,16 @@ import {
 
 // --- DATA ---
 
+type MarqueeItem = { text: string; icon: React.ElementType };
+
+const MARQUEE_ITEMS: MarqueeItem[] = [
+  { text: 'Accepting New Clients for 2025', icon: Zap },
+  { text: 'Masterclass: "The Art of the Vow" Now Live', icon: Star },
+  { text: 'Rank #1 on Google Maps in 30 Days', icon: TrendingUp },
+  { text: 'New: Luxury Brand Kits for Celebrants', icon: PenTool },
+  { text: 'Cinematic Wedding Film Packages Added', icon: Play },
+];
+
 const NICHES_DATA: Niche[] = [
   { id: 1, title: "Wedding Celebrants", description: "The cornerstone of the industry. We build high-converting portfolios that showcase your unique style and attract luxury couples.", needs: ["Visual Storytelling", "SEO Domination", "Blog Strategy"], iconName: "Heart", opportunityLevel: "High" },
   { id: 2, title: "Funeral Celebrants", description: "Trust and dignity are your currency. We optimize your local presence so families find you when they need you most.", needs: ["Local Maps Ranking", "Service Pages", "Trust Signals"], iconName: "Sunset", opportunityLevel: "High" },
@@ -49,6 +59,51 @@ const BUNDLES_DATA: Bundle[] = [
   }
 ];
 
+const PORTFOLIO_IMAGES = [
+  {
+    id: 1,
+    title: 'Coastal Vows',
+    description: 'Destination elopement specialist website with cinematic storytelling.',
+    image:
+      'https://images.unsplash.com/photo-1520854221050-0f4caff449fb?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 2,
+    title: 'Sacred Stories',
+    description: 'Spiritual celebrant brand system and ritual-inspired typography.',
+    image:
+      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 3,
+    title: 'Ever After Studio',
+    description: 'Luxury wedding collective with an editorial landing page.',
+    image:
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 4,
+    title: 'Heritage Ceremonies',
+    description: 'Family-led funeral celebrant site with compassionate messaging.',
+    image:
+      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 5,
+    title: 'City Hall Elopements',
+    description: 'Fast-paced urban elopement brand with conversion-focused booking flow.',
+    image:
+      'https://images.unsplash.com/photo-1528892952291-009c663ce843?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 6,
+    title: 'The Ritualists',
+    description: 'Collective of modern officiants featuring modular service cards.',
+    image:
+      'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80',
+  },
+];
+
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -56,17 +111,26 @@ function App() {
     <div className="min-h-screen bg-cream-50 overflow-x-hidden selection:bg-clay-400 selection:text-white">
       
       {/* --- TOP MARQUEE --- */}
-      <div className="bg-charcoal-900 text-cream-100 py-3 overflow-hidden whitespace-nowrap border-b border-white/5 relative z-50">
-        <div className="inline-block animate-marquee flex items-center">
-          <span className="mx-6 font-mono text-[10px] font-bold uppercase tracking-widest flex items-center gap-2"><Zap size={10} className="text-clay-400" /> Accepting New Clients for 2025</span>
-          <span className="w-1 h-1 rounded-full bg-white/20"></span>
-          <span className="mx-6 font-mono text-[10px] font-bold uppercase tracking-widest flex items-center gap-2"><Star size={10} className="text-clay-400" /> Masterclass: "The Art of the Vow" Now Live</span>
-          <span className="w-1 h-1 rounded-full bg-white/20"></span>
-          <span className="mx-6 font-mono text-[10px] font-bold uppercase tracking-widest flex items-center gap-2"><TrendingUp size={10} className="text-clay-400" /> Rank #1 on Google Maps in 30 Days</span>
-          <span className="w-1 h-1 rounded-full bg-white/20"></span>
-          <span className="mx-6 font-mono text-[10px] font-bold uppercase tracking-widest flex items-center gap-2"><Zap size={10} className="text-clay-400" /> Accepting New Clients for 2025</span>
-          <span className="w-1 h-1 rounded-full bg-white/20"></span>
-          <span className="mx-6 font-mono text-[10px] font-bold uppercase tracking-widest flex items-center gap-2"><Star size={10} className="text-clay-400" /> Masterclass: "The Art of the Vow" Now Live</span>
+      <div className="bg-charcoal-900 text-cream-100 py-3 overflow-hidden border-b border-white/5 relative z-50">
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-charcoal-900 via-charcoal-900/80 to-transparent z-20"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-charcoal-900 via-charcoal-900/80 to-transparent z-20"></div>
+        <div className="relative flex items-center whitespace-nowrap">
+          <div className="flex items-center flex-none animate-marquee gap-6 pr-6">
+            {MARQUEE_ITEMS.map((item, index) => (
+              <div key={`marquee-${index}`} className="flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest">
+                {React.createElement(item.icon, { size: 10, className: 'text-clay-400' })}
+                <span>{item.text}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center flex-none animate-marquee gap-6 pr-6" aria-hidden="true">
+            {MARQUEE_ITEMS.map((item, index) => (
+              <div key={`marquee-duplicate-${index}`} className="flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest">
+                {React.createElement(item.icon, { size: 10, className: 'text-clay-400' })}
+                <span>{item.text}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -152,6 +216,21 @@ function App() {
                 Free Audit
               </a>
             </div>
+
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left animate-fade-in-up [animation-delay:550ms]">
+              <div className="p-4 bg-white/70 border border-cream-200 rounded-lg shadow-sm shadow-clay-900/5">
+                <p className="font-serif text-3xl text-charcoal-900">+212%</p>
+                <p className="text-xs uppercase font-mono tracking-[0.2em] text-charcoal-500">Avg. Inquiry Lift</p>
+              </div>
+              <div className="p-4 bg-white/70 border border-cream-200 rounded-lg shadow-sm shadow-clay-900/5">
+                <p className="font-serif text-3xl text-charcoal-900">6.4s</p>
+                <p className="text-xs uppercase font-mono tracking-[0.2em] text-charcoal-500">Time on Page</p>
+              </div>
+              <div className="p-4 bg-white/70 border border-cream-200 rounded-lg shadow-sm shadow-clay-900/5">
+                <p className="font-serif text-3xl text-charcoal-900">42+</p>
+                <p className="text-xs uppercase font-mono tracking-[0.2em] text-charcoal-500">Markets Served</p>
+              </div>
+            </div>
           </div>
 
           {/* Hero Visual */}
@@ -188,32 +267,44 @@ function App() {
       {/* --- VISUAL PORTFOLIO MARQUEE --- */}
       <section className="py-20 overflow-hidden bg-white border-y border-charcoal-900/5">
          <div className="mb-12 text-center">
+            <span className="text-clay-500 font-mono font-bold tracking-widest uppercase text-[10px] mb-4 block">Live Portfolio</span>
             <h2 className="text-3xl font-serif text-charcoal-900">Designed To <span className="italic text-clay-400">Captivate</span></h2>
          </div>
-         <div className="flex animate-marquee hover:[animation-play-state:paused] gap-8 w-max">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-               <div key={item} className="w-[300px] md:w-[400px] aspect-[4/3] bg-cream-100 relative group overflow-hidden border border-cream-200">
-                  <div className="absolute inset-0 bg-charcoal-900/5 group-hover:bg-charcoal-900/0 transition-colors"></div>
-                  <div className="absolute bottom-0 left-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                     <span className="font-mono text-[10px] uppercase tracking-widest text-charcoal-900 bg-white px-2 py-1">Project 0{item}</span>
+         <div className="relative">
+           <div className="flex animate-marquee hover:[animation-play-state:paused] gap-8 w-max">
+             {PORTFOLIO_IMAGES.map((project) => (
+               <figure key={project.id} className="w-[300px] md:w-[420px] aspect-[4/3] relative group overflow-hidden rounded-xl border border-cream-200 shadow-xl shadow-clay-900/5">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-charcoal-900/0 to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                     <span className="font-mono text-[10px] uppercase tracking-widest text-cream-200 bg-white/10 px-2 py-1 rounded-full border border-white/10">{project.title}</span>
+                     <p className="text-cream-50 mt-3 text-sm leading-relaxed font-light">{project.description}</p>
                   </div>
-                  <div className="w-full h-full flex items-center justify-center text-cream-200 font-serif text-6xl opacity-30">
-                     Img
+               </figure>
+             ))}
+             {PORTFOLIO_IMAGES.map((project) => (
+               <figure key={`duplicate-${project.id}`} className="w-[300px] md:w-[420px] aspect-[4/3] relative group overflow-hidden rounded-xl border border-cream-200 shadow-xl shadow-clay-900/5" aria-hidden="true">
+                  <img
+                    src={project.image}
+                    alt=""
+                    loading="lazy"
+                    className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-charcoal-900/0 to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                     <span className="font-mono text-[10px] uppercase tracking-widest text-cream-200 bg-white/10 px-2 py-1 rounded-full border border-white/10">{project.title}</span>
+                     <p className="text-cream-50 mt-3 text-sm leading-relaxed font-light">{project.description}</p>
                   </div>
-               </div>
-            ))}
-            {/* Duplicate for smooth loop */}
-             {[1, 2, 3, 4, 5, 6].map((item) => (
-               <div key={`d-${item}`} className="w-[300px] md:w-[400px] aspect-[4/3] bg-cream-100 relative group overflow-hidden border border-cream-200">
-                  <div className="absolute inset-0 bg-charcoal-900/5 group-hover:bg-charcoal-900/0 transition-colors"></div>
-                  <div className="absolute bottom-0 left-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                     <span className="font-mono text-[10px] uppercase tracking-widest text-charcoal-900 bg-white px-2 py-1">Project 0{item}</span>
-                  </div>
-                  <div className="w-full h-full flex items-center justify-center text-cream-200 font-serif text-6xl opacity-30">
-                     Img
-                  </div>
-               </div>
-            ))}
+               </figure>
+             ))}
+           </div>
+           <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+           <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white via-white/80 to-transparent"></div>
          </div>
       </section>
 
