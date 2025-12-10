@@ -62,45 +62,75 @@ const BUNDLES_DATA: Bundle[] = [
 const PORTFOLIO_IMAGES = [
   {
     id: 1,
-    title: 'Coastal Vows',
-    description: 'Destination elopement specialist website with cinematic storytelling.',
-    image:
-      'https://images.unsplash.com/photo-1520854221050-0f4caff449fb?auto=format&fit=crop&w=1200&q=80',
+    title: 'Benjamin & Isabella',
+    description: 'Elegant Divi theme featuring sophisticated typography and parallax scrolling.',
+    image: '/images2/Divi-Benjamin-Isabella.jpg',
   },
   {
     id: 2,
-    title: 'Sacred Stories',
-    description: 'Spiritual celebrant brand system and ritual-inspired typography.',
-    image:
-      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80',
+    title: 'Mick & Della',
+    description: 'Romantic wedding celebration with custom floral elements and gold accents.',
+    image: '/images2/Divi-Mick-Della.jpg',
   },
   {
     id: 3,
-    title: 'Ever After Studio',
-    description: 'Luxury wedding collective with an editorial landing page.',
-    image:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80',
+    title: 'Wedding Photographer Pro',
+    description: 'Clean, minimalist design perfect for showcasing photography portfolios.',
+    image: '/images2/Divi-Wedding-Photographer.jpg',
   },
   {
     id: 4,
-    title: 'Heritage Ceremonies',
-    description: 'Family-led funeral celebrant site with compassionate messaging.',
-    image:
-      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80',
+    title: 'Elopement Specialist',
+    description: 'Intimate elopement website with adventure travel aesthetic.',
+    image: '/images2/Divi-wedding-planner (1).jpg',
   },
   {
     id: 5,
-    title: 'City Hall Elopements',
-    description: 'Fast-paced urban elopement brand with conversion-focused booking flow.',
-    image:
-      'https://images.unsplash.com/photo-1528892952291-009c663ce843?auto=format&fit=crop&w=1200&q=80',
+    title: 'Modern Celebrant',
+    description: 'Elementor-based design with dynamic animations and video integration.',
+    image: '/images2/Elementor-Wedding-Photographer.jpg',
   },
   {
     id: 6,
-    title: 'The Ritualists',
-    description: 'Collective of modern officiants featuring modular service cards.',
-    image:
-      'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80',
+    title: 'Dario\'s Ceremony',
+    description: 'Squarespace design featuring bold typography and minimalist layout.',
+    image: '/images2/Squarespace-dario (1).jpg',
+  },
+  {
+    id: 7,
+    title: 'Laurie\'s Love Story',
+    description: 'Soft, romantic Squarespace theme with pastel color palette.',
+    image: '/images2/Squarespace-laurie (1).jpg',
+  },
+  {
+    id: 8,
+    title: 'Soria Memorial',
+    description: 'Graceful memorial website with serene imagery and comforting design.',
+    image: '/images2/Squarespace-soria.jpg',
+  },
+  {
+    id: 9,
+    title: 'Castello Weddings',
+    description: 'Luxury ThemeForest template with castle-inspired romantic elements.',
+    image: '/images2/Theme-Forest-Castello.jpg',
+  },
+  {
+    id: 10,
+    title: 'Feelings Theme',
+    description: 'Emotional design with hand-drawn elements and watercolor effects.',
+    image: '/images2/Theme-Forest-Feelings.jpg',
+  },
+  {
+    id: 11,
+    title: 'Moments Capture',
+    description: 'Photojournalistic theme focusing on candid wedding moments.',
+    image: '/images2/Theme-Forest-Moments (1).jpg',
+  },
+  {
+    id: 12,
+    title: 'Solene Romance',
+    description: 'French-inspired elegant design with delicate floral motifs.',
+    image: '/images2/Theme-Forest-Solene (1).jpg',
   },
 ];
 
