@@ -21,6 +21,15 @@ export interface Tier {
   niches: string[];
 }
 
+export interface Bundle {
+  id: number;
+  title: string;
+  price: string;
+  description: string;
+  features: string[];
+  recommended?: boolean;
+}
+
 export enum LoadingState {
   IDLE = 'IDLE',
   LOADING = 'LOADING',

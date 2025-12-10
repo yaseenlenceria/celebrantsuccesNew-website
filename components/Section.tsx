@@ -11,9 +11,12 @@ export const Section: React.FC<SectionProps> = ({ children, className = "", id, 
   return (
     <section 
       id={id} 
-      className={`py-16 px-4 md:px-8 lg:px-16 ${dark ? 'bg-stone-900 text-champagne-50' : 'bg-transparent text-stone-900'} ${className}`}
+      className={`py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden ${dark ? 'bg-charcoal-900 text-cream-50' : 'bg-transparent text-charcoal-900'} ${className}`}
     >
-      <div className="max-w-7xl mx-auto">
+      {/* Subtle Noise Texture Overlay */}
+      <div className={`absolute inset-0 opacity-[0.04] pointer-events-none bg-noise ${dark ? 'invert' : ''}`}></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         {children}
       </div>
     </section>
