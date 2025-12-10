@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.celebrantsucces.com/sitemap.xml
+Host: www.celebrantsucces.com

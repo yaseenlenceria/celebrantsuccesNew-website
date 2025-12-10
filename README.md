@@ -15,6 +15,17 @@ View your app in AI Studio: https://ai.studio/apps/drive/1Zr3NrzZ0zmotx8TOQ3foHe
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+2. Copy `.env.example` to `.env.local` and set `VITE_GEMINI_API_KEY` to your Gemini API key.
 3. Run the app:
    `npm run dev`
+
+## Deploying to Netlify
+
+This project is preconfigured for Netlify:
+
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
+- **Environment variables:** add `VITE_GEMINI_API_KEY` in your Netlify dashboard.
+- **Redirects:** `netlify.toml` ships with a single-page app fallback.
+
+The `public` directory contains `robots.txt` and `sitemap.xml` tuned for https://www.celebrantsucces.com/ to help search engines crawl the site.
